@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shared.Contracts.Events
+﻿namespace Shared.Contracts.Events
 {
-    internal class BidPlacedEvent
+    public record BidPlacedEvent
     {
+        public string BidId { get; set; } = Guid.NewGuid().ToString();
+        public string AuctionId { get; set; }
+        public string BidderId { get; set; }
+        public decimal BidAmount { get; set; }           
+        public DateTimeOffset BidDate { get; set; }
     }
 }
